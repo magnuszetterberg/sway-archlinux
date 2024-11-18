@@ -45,6 +45,8 @@ exec nm-applet
 exec systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 exec blueman-applet
+input type:keyboard xkb_numlock enabled
+
 
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
