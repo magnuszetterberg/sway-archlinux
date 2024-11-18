@@ -104,7 +104,7 @@ input "type:touchpad" {
 
 
 ### Sway Output configuration
-#output * scale 1 bg ~/github/hyprland-archlinux/hypr/wallpaper/wave_beach-wallpaper-1920x1080.jpg fill
+output * bg  ~/.config/background/clouds.jpg fill
 # # laptop on the left, dp6 in the middle, dp5 on the right
 # output eDP-1 pos 0 0
 # output DP-6 pos 1920 0
