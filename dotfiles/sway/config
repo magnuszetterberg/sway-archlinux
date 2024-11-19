@@ -12,11 +12,12 @@
 #shadows_on_csd enable;
 
 #Gaps
-#gaps inner 10
+gaps inner 100
+gaps outer 100
 
 #Borders
-#default_border pixel 5
-#default_floating_border pixel 5
+default_border none pixel 5
+default_floating_border pixel 5
 
 #misc
 #layer_effects "wofi" shadows enable; corner_radius 9 
@@ -46,7 +47,8 @@ exec systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 exec blueman-applet
 input type:keyboard xkb_numlock enabled
-
+# Enables inhibit_idle when playing audio
+exec sway-audio-idle-inhibit
 
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
