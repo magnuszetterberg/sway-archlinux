@@ -34,7 +34,7 @@ fc-cache -f -v &&
 
 #setup dev-tools
 echo "#setup dev-tools"
-yay -S visual-studio-code-bin helix
+yay -S visual-studio-code-bin helix slurp
 
 
 #stow your dotfiles
