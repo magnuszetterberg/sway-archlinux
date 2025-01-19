@@ -12,8 +12,9 @@
 #shadows_on_csd enable;
 
 #Gaps
-gaps inner 100
-gaps outer 100
+#smartgaps
+gaps inner 5
+gaps outer 5
 
 #Borders
 default_border none pixel 5
@@ -46,6 +47,7 @@ exec nm-applet
 exec systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 exec blueman-applet
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1   
 input type:keyboard xkb_numlock enabled
 # Enables inhibit_idle when playing audio
 exec sway-audio-idle-inhibit

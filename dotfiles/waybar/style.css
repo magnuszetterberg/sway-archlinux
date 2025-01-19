@@ -21,6 +21,20 @@ tooltip {
     border-color: #11111b;
 }
 
+
+
+#custom-wireguard {
+    color: #cdd6f4;  /* Match the color of adjacent icons */
+    background: transparent;  /* Match background */
+    padding: 0;  /* Align with tray icon spacing */
+    margin: 0;  /* Align closely with tray */
+    border: none;  /* Remove any border */
+    font-size: 16px;  /* Match the size of other icons */
+}
+
+
+
+/* Existing styles */
 #workspaces button {
     padding: 5px;
     color: #313244;
@@ -49,6 +63,7 @@ tooltip {
     border-radius: 10px;
 }
 
+#custom-audio_idle_inhibitor,
 #custom-power_profile,
 #custom-weather,
 #window,
@@ -60,6 +75,7 @@ tooltip {
 #temperature,
 #workspaces,
 #tray,
+#custom-wireguard,
 #backlight {
     background: #1e1e2e;
     opacity: 0.8;
@@ -92,6 +108,12 @@ tooltip {
     margin-left: 10px;
     padding-right: 0px;
     padding-left: 5px;
+}
+
+#custom-audio_idle_inhibitor {
+    color: orange;
+    border-left: 0px;
+    border-right: 0px;
 }
 
 #custom-power_profile {
