@@ -59,6 +59,7 @@ set $down j
 set $up k
 set $right l
 set $term alacritty -o "window.opacity=0.6"
+set $menu wofi --show=drun
 set $fileManager nautilus
 set $lock wlogout
 set $browser chromium
