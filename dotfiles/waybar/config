@@ -125,7 +125,7 @@
             ]
         },
         "on-click-right": "pavucontrol",
-        "on-click": "~/.config/waybar/toggleaudio.sh"
+        "on-click": "~/.config/waybar/scripts/toggleaudio.sh"
     },
     "pulseaudio#microphone": {
         "format": "{format_source}",
