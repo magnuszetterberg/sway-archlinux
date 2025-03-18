@@ -1,21 +1,37 @@
+
 #!/bin/bash
 # Make sure to 'chmod 755 toggleaudio.sh' to make it accessible for waybar
-newSink=""
 
-#The alsa_out... string is hardcoded to your soundoutputs... please update them for your setup
-Headphones="alsa_output.usb-GN_Netcom_A_S_Jabra_EVOLVE_LINK_MS_0006FC45D50A08-00.analog-stereo" #Change this device's to headphone pactl name
-Speaker="alsa_output.pci-0000_00_1f.3-platform-tgl_rt5682_def.pro-output-0" #Change this to device's speaker pactl name
+# Get a list of available sinks
+sinks=($(pactl list short sinks | cut -f2))
+
+# Determine the current default sink
 currentSink=$(pactl info | sed -n 's/Default Sink: //p')
 
-if [ "$Speaker" = "$currentSink" ]; then
-    newSink="$Headphones"
+# Find the index of the current sink in the sinks array
+currentIndex=-1
+for i in "${!sinks[@]}"; do
+    if [ "${sinks[i]}" = "$currentSink" ]; then
+        currentIndex=$i
+        break
+    fi
+done
+
+# Calculate the index for the new sink
+if [ $currentIndex -ge 0 ]; then
+    newIndex=$(( (currentIndex + 1) % ${#sinks[@]} ))
+    newSink="${sinks[newIndex]}"
 else
-    newSink="$Speaker"
+    echo "Current sink not found in the list of available sinks."
+    exit 1
 fi
 
+# Set the new default sink
 pactl set-default-sink "$newSink"
-pactl list short sink-inputs|while read stream; do
-    streamId=$(echo $stream|cut '-d ' -f1)
-    echo "moving stream $streamId"
+
+# Move all sink inputs to the new default sink
+pactl list short sink-inputs | while read stream; do
+    streamId=$(echo $stream | cut '-d ' -f1)
+    echo "Moving stream $streamId to sink $newSink"
     pactl move-sink-input "$streamId" "$newSink"
 done
