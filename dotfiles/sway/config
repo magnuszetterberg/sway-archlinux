@@ -95,8 +95,8 @@ set $browser chromium
 # Set keyboard language
 input * {
     xkb_layout "se"
-    xkb_variant "colemak,,typewriter"
-    xkb_options "grp:win_space_toggle"
+    # xkb_variant "colemak,,typewriter"
+    # xkb_options "grp:win_space_toggle"
 }
 # enable touchpad swipe between workspaces and scroll in windows
 input "type:touchpad" {
