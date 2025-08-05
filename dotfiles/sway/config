@@ -16,6 +16,7 @@
 gaps inner 5
 gaps outer 5
 
+
 #Borders
 default_border none pixel 5
 default_floating_border pixel 5
@@ -36,6 +37,11 @@ for_window [class="steam"]
 {
 	floating enable
 	border pixel $border
+}
+for_window [class="bitwarden"]
+{
+ floating enable
+ border pixel $border
 }
 
 

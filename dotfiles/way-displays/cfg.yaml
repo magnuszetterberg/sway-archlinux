@@ -19,6 +19,7 @@ ORDER:
   - 'Dell Inc. DELL SP2309W T940F0560L8S'
   - 'Dell Inc. DELL P2421 CW2NL23'
   - 'Dell Inc. DELL P2421 H3CNL23'
+  - 'DP-2'
 #   #Fix for handling the new output names for displays when undocking and docking usb-c hubs before and after boot
 
 # Work monitors
@@ -46,7 +47,9 @@ AUTO_SCALE_MIN: 1.0
 # Auto scale may be overridden for each display.
 SCALE:
   - NAME_DESC: 'eDP-1'
-    SCALE: 1.1
+    SCALE: 1.0
+  # - NAME_DESC: 'DP-2'
+  #   SCALE: 1.0
 
 # Override the preferred mode.
 # WARNING: this may result in an unusable display. See https://github.com/alex-courtis/way-displays#known-issues-with-workarounds
@@ -56,12 +59,18 @@ MODE:
     - NAME_DESC: eDP-1
       WIDTH: 1920
       HEIGHT: 1200
-      HZ: 120
+      HZ: 60
 
-    - NAME_DESC: 'Philips Consumer Electronics Company PHL 34B1U5600 UK02239009678'
-      WIDTH: 3440
-      HEIGHT: 1440
-      HZ: 120
+    # - NAME_DESC: 'Philips Consumer Electronics Company PHL 34B1U5600 UK02239009678'
+    #   WIDTH: 3440
+    #   HEIGHT: 1440
+    #   HZ: 120
+
+    - NAME_DESC: 'DP-2'
+      WIDTH: 1280
+      HEIGHT: 720
+      #HZ: 60
+      SCALE: 1.0
     # Resolution with highest refresh
     #- NAME_DESC: 'monitor description'
     #  WIDTH: 2560
@@ -79,7 +88,7 @@ TRANSFORM:
 
 # VRR / adaptive sync is enabled by default. Disable it per display.
 VRR_OFF:
-  # - DP-2
+  - DP-2
   # - '!.*my monitor.*'
 
 
